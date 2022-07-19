@@ -1,30 +1,78 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view />
+    <div class="container">
+        <header>
+            <h1>Vue3 Blog</h1>
+            <menu-buttons></menu-buttons>
+        </header>
+        <main>
+            <router-view></router-view>
+        </main>
+    </div>
 </template>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+    :root {
+        --main-text-color: #f9f9f9;
+        --main-elem-color: #f9f9f9;
+        --main-bg-color: rgb(51, 51, 51);
+        --red-color: red;
+        --gray-text-color: #555;
+    }
 
-#nav {
-  padding: 30px;
-}
+    * {
+        box-sizing: border-box;
+    }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+    body {
+        background: var(--main-bg-color);
+        color: var(--main-text-color);
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+    }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+    a {
+        color: var(--main-text-color);
+        text-decoration: none;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .container {
+        max-width: 1200px;
+        width: 100%;
+        margin: 30px auto;
+    }
+
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: 2px solid #fff;
+        padding: 15px;
+        margin-bottom: 30px;
+    }
+
+    .menu {
+        display: flex;
+        align-items: center;
+    }
+
+    .menu li {
+        margin-right: 10px;
+    }
+
+    .items {
+        display: flex;
+    }
+
+
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
 </style>
