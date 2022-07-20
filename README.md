@@ -1,4 +1,4 @@
-# testproj
+# Vue3Blog
 
 ## Project setup
 ```
