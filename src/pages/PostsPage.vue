@@ -62,29 +62,20 @@
         },
 
         methods: {
-            // async fetchPosts() {
-            //     this.isLoading = true;
-            //
-            //     const response = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=${this.limit}`);
-            //     this.posts = await response.json();
-            //
-            //     //concat posts with local posts
-            //     this.posts = [...this.posts, ...this.postsLocal];
-            //
-            //     this.isLoading = false;
-            // },
-
-
-             async loadMorePosts() {
+            async loadMorePosts() {
                 if(this) this.limit += 10;
                 try {
                     this.isLoading = true;
                     const response = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=${this.limit}`);
-                    this.posts = await response.json();
-                    this.isLoading = false;
+                    let arr = await response.json();
+                    setTimeout(() => {
+                        this.posts = arr;
+                        this.isLoading = false;
+                    }, 1000)
                 } catch (e) {
-                    alert('Ошибка' + e);
+                    alert(e)
                 }
+
             },
 
             deletePost(deletedPost) {

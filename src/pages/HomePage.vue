@@ -64,11 +64,11 @@
                 pageNum === 'pagePlus' ? this.page += 1 : pageNum === 'pageMinus' ? this.page -= 1 : this.page =
                     pageNum;
             },
-
+            
             async getPosts() {
                 this.isLoading = true;
 
-                const response = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=10&_page=2`);
+                const response = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=10&_page=1`);
                 const outerPosts = await response.json();
 
                 this.posts = outerPosts;
@@ -113,8 +113,6 @@
 
                 history.replaceState(history.state, '', `?page=${this.page}`);
             },
-
-
         },
     };
 </script>
