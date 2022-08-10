@@ -1,5 +1,7 @@
 # Vue3Blog
 
+<a href="https://ser-voz.github.io/vue3Blog/" target="_blank">Check it here</a>
+
 ## Project setup
 ```
 npm install
